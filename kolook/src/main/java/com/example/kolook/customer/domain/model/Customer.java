@@ -1,5 +1,6 @@
 package com.example.kolook.customer.domain.model;
 
+import java.sql.ResultSet;
 import java.util.Collection;
 
 import javax.persistence.Column;
@@ -192,6 +193,10 @@ public class Customer implements UserDetails {
 	public boolean isEnabled() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
+	}
+
+	public Customer(ResultSet resultSet) {
+		// TODO 自動生成されたコンストラクター・スタブ
 	}
 	
 }
