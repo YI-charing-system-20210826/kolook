@@ -1,9 +1,6 @@
 package com.example.kolook.customer.domain.model;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Collection;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -83,7 +80,7 @@ public class Customer implements UserDetails {
 	 * @param last_name
 	 */
 
-	public Customer(ResultSet resultSet) {
+	/*public Customer(ResultSet resultSet) {
 		try {
 		this.last_name = check("last_name",resultSet.getInt("last_name"));
 		this.first_name = check("first_name",resultSet.getString("first_name"));
@@ -101,9 +98,9 @@ public class Customer implements UserDetails {
 			System.out.println("SQLデータを正しく格納することが出来ませんでした");
 			e.printStackTrace();
 		}
-	}
+	}*/
 
-	//null回避用メソッド
+	/*//null回避用メソッド
 	public String check(String s,int c) {
 		try {
 			System.out.println(s+":"+c);
@@ -130,7 +127,7 @@ public class Customer implements UserDetails {
 		}else {
 			return new Date(-31536000000L);
 		}
-	}
+	}*/
 	
 	/***
 	 * @id customer

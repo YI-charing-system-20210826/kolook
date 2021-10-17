@@ -5,9 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.example.kolook.customer.CustomerRepository;
 import com.example.kolook.customer.domain.model.Customer;
@@ -18,7 +17,7 @@ public class CustomerService implements UserDetailsService {
     @Autowired
 	private CustomerRepository repository;
 
-	private PasswordEncoder passwordEncoder;
+	//private PasswordEncoder passwordEncoder;
 
     private List<Customer> result;
 
@@ -45,8 +44,8 @@ public class CustomerService implements UserDetailsService {
 
     //adminを登録するメソッド
  //保留
-    @Transactional
-    public void registerAdmin(String username, String password) {
+    //@Transactional
+   /* public void registerAdmin(String username, String password) {
         //問３－３ 引数をもとにAccountクラスのインスタンスを生成する構文を記述（passwordはハッシュ化）
     	Customer user = new Customer(username,passwordEncoder.encode(password));
         user.setAdmin(true);
@@ -68,6 +67,6 @@ public class CustomerService implements UserDetailsService {
 	    public void registerUser(String username, String password) {
 	        Customer user = new Customer(username,passwordEncoder.encode(password));
 	        repository.save(user);
-	    }
+	    }*/
 	}
 

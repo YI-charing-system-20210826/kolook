@@ -1,5 +1,6 @@
 package com.example;
 
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
@@ -15,13 +16,13 @@ public class WebConfig {
 		
 		bean.setDefaultEncoding("UTF-8");
 		
-		return bean;
+		return (MassageSource) bean;
 	}
 	
 	@Bean
 	public LocalValidatorFactoryBean localValidatorFactoryBean() {
 		LocalValidatorFactoryBean localValidatorFactoryBean = new LocalValidatorFactoryBean();
-		localValidatorFactoryBean.setValidationMessageSource(messageSource());
+		localValidatorFactoryBean.setValidationMessageSource((MessageSource) messageSource());
 		return localValidatorFactoryBean;
 	}
 }

@@ -15,20 +15,23 @@ import org.springframework.stereotype.Service;
 
 import com.example.kolook.customer.domain.model.Customer;
 
-	@Service
-	@Component
-public class CustomerServiceSelectAll<PostgresDriverSQLData> {
+@Service
+@Component
+public class CustomerServiceSelectAll<CustomerServiceNewCustomerId> {
 	/**
+	 * @
 	 * 一覧のデータを取得、送信するサービスクラス
+	 * @param id
+	 * @return customerList
 	 */
-		@Autowired
-		PostgresDriverSQLData pdsql;
-		@Autowired
-		CustomerServiceNewCustomerId esnei;
+	@Autowired
+	PostgresDriverSQLData pdsql;
+	@Autowired
+	CustomerServiceNewCustomerId esnei;
 
 	public List<Customer> SelectAllSQL() {
-		System.out.println("EmployeeServiceSelectAll起動");
-		List<Customer> employeeList = new ArrayList<>();
+		System.out.println("CustomerServiceSelectAll起動");
+		List<Customer> customerList = new ArrayList<>();
 
 		Connection connection = null;
 		Statement statement = null;
@@ -49,10 +52,10 @@ public class CustomerServiceSelectAll<PostgresDriverSQLData> {
 			System.out.println("SQLデータの格納");
 			//取得したSQLデータをList内に格納
 			while (resultSet.next()) {
-				employeeList.add(new Customer(resultSet.getInt(pdsql.getEMPLOYEE_ID()),resultSet.getString(pdsql.getEMPLOYEE_USERNAME()),resultSet.getString(pdsql.getEMPLOYEE_COMPANY_CODE()),resultSet.getString(pdsql.getEMPLOYEE_COMPANY_DEPART_CODE())));
+				customerList.add(new Customer());
 			}
 
-		} catch(ClassNotFoundException e) {
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			System.out.println("SQLが正常に使用されませんでした");
@@ -71,9 +74,9 @@ public class CustomerServiceSelectAll<PostgresDriverSQLData> {
 				System.out.println("正常にSQLが閉じられませんでした");
 			}
 		}
-		System.out.println("EmployeeServiceSelectAll終了");
+		System.out.println("CustomerServiceSelectAll終了");
 		System.out.println();
 		System.out.println();
-		return employeeList;
+		return customerList;
 	}
 }
