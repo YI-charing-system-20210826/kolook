@@ -19,7 +19,7 @@ import com.example.kolook.customer.domain.service.CustomerServiceSelectAll;
 @Controller
 public class CustomerListController {
 	@Autowired
-	CustomerServiceSelectAll customerService;
+	CustomerServiceSelectAll<?> customerService;
 
 	@GetMapping("/list")
 	//顧客一覧画面　GET用コントローラー

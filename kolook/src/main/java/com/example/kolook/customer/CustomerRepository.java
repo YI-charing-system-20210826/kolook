@@ -10,7 +10,7 @@ import com.example.kolook.customer.domain.model.Customer;
 
 @Repository
 public interface CustomerRepository extends CrudRepository<Customer, Long>{
-    public Customer findByUsername(String username);
+    public Customer findByUsername(String last_name);
     public List<Customer> findAll();
 
 }
