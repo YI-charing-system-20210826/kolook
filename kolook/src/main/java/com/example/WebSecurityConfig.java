@@ -49,6 +49,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				auth
 		.userDetailsService(userService)
 		.passwordEncoder(passwordEncoder());
+				
+		//ログイン時のパスワード設定
+		//EmployeeServiceクラスを作成しそこにメソッドを作成
 
 	}
 	@Bean
