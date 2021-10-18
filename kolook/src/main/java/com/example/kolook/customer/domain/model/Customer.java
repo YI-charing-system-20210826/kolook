@@ -27,7 +27,7 @@ public class Customer implements UserDetails {
 	@Column(nullable = false, unique = true)
 	private int customer_id;
 
-	// 各カラムをフェールド変数に設定
+	// 各カラムをフィールド変数に設定
 	@Id
 	@Column(nullable = false)
 	private String last_name; //姓
