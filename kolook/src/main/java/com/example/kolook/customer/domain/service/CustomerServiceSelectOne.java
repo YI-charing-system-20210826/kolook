@@ -20,7 +20,7 @@ public class CustomerServiceSelectOne {
 	 * @
 	 * 一覧のデータを取得、詳細や編集に送信するサービスクラス
 	 * @param id
-	 * @return employee
+	 * @return customer
 	 */
 
 	@Autowired

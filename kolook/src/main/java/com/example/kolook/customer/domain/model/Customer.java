@@ -76,7 +76,6 @@ public class Customer implements UserDetails {
 	 * 全権取得の為に使用するコンストラクタ
 	 * SQLのResultSetを入れることで全てのデータが入った、
 	 * Customerクラスを簡単に作れます
-	 * @author 畑中 悠希
 	 * @param customer_id
 	 * @param last_name
 	 */
