@@ -13,7 +13,7 @@ import com.example.kolook.customer.domain.service.CustomerServiceSelectAll;
 
 /**
  * list画面のコントローラー
- * @author masuda
+ * @author umemura
  */
 	
 @Controller
