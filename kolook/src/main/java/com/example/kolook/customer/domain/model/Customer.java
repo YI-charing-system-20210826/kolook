@@ -136,7 +136,7 @@ public class Customer implements UserDetails {
 	 * customerの中に格納されているデータを確認する為のプログラム（編集用）
 	 */
 	
-	public void editTest(String point) {
+	/*public void editTest(String point) {
 		System.out.println("起動場所:"+point);
 		System.out.println("last_name:"+this.getLast_name());
 		System.out.println("first_name:"+this.getFirst_name());
@@ -151,7 +151,7 @@ public class Customer implements UserDetails {
 		System.out.println("remarks:"+this.getRemarks());
 		System.out.println();
 		System.out.println();
-	}
+	}*/
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
