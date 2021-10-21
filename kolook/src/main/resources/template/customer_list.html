@@ -20,9 +20,11 @@
 			<th>電話番号</th>
 		</tr>
 		<tr>
-			<th></th>
-			<th></th>
-			<th></th>
+			<th:block th:each="color1 : ${list1}">
+				<th>th:text="${color1}"</th>
+				<th>th:text="${color1}"</th>
+				<th>th:text="${color1}"</th>
+			</th:block>
 		</tr>
 	</table>
 	<a>次へ</a>
