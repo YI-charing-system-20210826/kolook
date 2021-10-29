@@ -1,4 +1,4 @@
-package com.example.kolook.admin.controller;
+/*package com.example.kolook.admin.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,3 +24,4 @@ public class TopController {
 		return "layout";
 	}
 }
+*/
