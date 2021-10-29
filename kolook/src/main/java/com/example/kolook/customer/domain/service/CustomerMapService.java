@@ -1,4 +1,4 @@
-/*package com.example.kolook.customer.domain.service;
+package com.example.kolook.customer.domain.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,13 +14,7 @@ import org.springframework.stereotype.Service;
 
 	@Service
 public class CustomerMapService {
-	*//**
-		* @
-		* htmlのradioで使えるinput用のMapを与えるサービスクラス
-		* @param code
-		* @return Map<String,String>
-		* @return Map<Integer,String>
-		*//*
+
 			@Autowired
 			PostgresDriverSQLData pdsql;
 			
@@ -152,4 +146,4 @@ public class CustomerMapService {
 			}
 			return mapInteger;
 			}
-			}*/
+			}

@@ -1,1 +1,2 @@
-package com.example.kolook.customer.domain.jdbc;
+/*package com.example.kolook.customer.domain.jdbc;
+*/

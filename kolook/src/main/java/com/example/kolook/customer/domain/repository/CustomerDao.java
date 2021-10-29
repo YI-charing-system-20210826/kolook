@@ -1,4 +1,4 @@
-package com.example.kolook.customer.domain.repository;
+/*package com.example.kolook.customer.domain.repository;
 
 import java.util.List;
 
@@ -18,4 +18,4 @@ public interface CustomerDao {
 	//従業員テーブルを1件削除　
 
 	//public void deleteOne(String customer_id) throws DataAccessException;
-}
+}*/

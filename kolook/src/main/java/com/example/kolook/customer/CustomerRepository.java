@@ -1,4 +1,4 @@
-package com.example.kolook.customer;
+/*package com.example.kolook.customer;
 
 
 import java.util.List;
@@ -13,4 +13,4 @@ public interface CustomerRepository extends CrudRepository<Customer, Long>{
     public Customer findByUsername(String last_name);
     public List<Customer> findAll();
 
-}
+}*/

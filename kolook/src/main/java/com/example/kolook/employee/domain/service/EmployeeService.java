@@ -2,6 +2,8 @@ package com.example.kolook.employee.domain.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -47,7 +49,7 @@ public class EmployeeService implements UserDetailsService {
 		return null;
 	}
 
-	/*   //adminを登録するメソッド
+	   //adminを登録するメソッド
 	//保留
 	@Transactional
 	  public void registerAdmin(String username, String password) {
@@ -72,7 +74,7 @@ public class EmployeeService implements UserDetailsService {
 	    public void registerUser(String username, String password) {
 	        Employee user = new Employee(username,passwordEncoder.encode(password));
 	        repository.save(user);
-	    */
+	    
 	}
 
 

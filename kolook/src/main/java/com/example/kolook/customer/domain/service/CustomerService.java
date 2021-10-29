@@ -45,7 +45,7 @@ public class CustomerService implements UserDetailsService {
     //adminを登録するメソッド
  //保留
     //@Transactional
-   /* public void registerAdmin(String username, String password) {
+    public void registerAdmin(String username, String password) {
         //問３－３ 引数をもとにAccountクラスのインスタンスを生成する構文を記述（passwordはハッシュ化）
     	Customer user = new Customer(username,passwordEncoder.encode(password));
         user.setAdmin(true);
@@ -67,6 +67,6 @@ public class CustomerService implements UserDetailsService {
 	    public void registerUser(String username, String password) {
 	        Customer user = new Customer(username,passwordEncoder.encode(password));
 	        repository.save(user);
-	    }*/
+	    }
 	}
 

@@ -1,6 +1,7 @@
 package com.example.kolook.customer.domain.model;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Collection;
 
 import javax.persistence.Column;
@@ -62,80 +63,64 @@ public class Customer implements UserDetails {
 	@Column(nullable = false)
 	private String remarks; //備考欄
 	
-	/**
-	 //* 一覧表示するために使用するコンストラクタ
-	 * @param customer_id
-	 * @param last_name
-	 */
-	public Customer(int customer_id,String last_name) {
-		this.customer_id = customer_id;
-		this.last_name = last_name;
+
+public Customer(int customer_id,String last_name) {
+this.customer_id = customer_id;
+this.last_name = last_name;
+}
+
+public Customer(ResultSet resultSet) {
+try {
+this.last_name = check("last_name",resultSet.getInt("last_name"));
+this.first_name = check("first_name",resultSet.getString("first_name"));
+this.last_name_Kana = check("last_name_Kana",resultSet.getString("last_name_Kana"));
+this.first_name_Kana = check("first_name_Kana",resultSet.getString("first_name_Kana"));
+this.gender =check("gender",resultSet.getInt("gender"));
+this.tel_no = check("tel_no",resultSet.getDate("tel_no"));
+this.email = check("email",resultSet.getInt("email"));
+this.post_no = check("post_no",resultSet.getString("post_no"));
+this.address = check("address",resultSet.getString("address"));
+this.address_detail = check("address_detail",resultSet.getString("address_detail"));
+this.remarks = check("remarks",resultSet.getString("remarks"));
+
+} catch (SQLException e) {
+	System.out.println("SQLデータを正しく格納することが出来ませんでした");
+	e.printStackTrace();
+}
+}
+/*
+//null回避用メソッド
+public String check(String s,int c) {
+try {
+	System.out.println(s+":"+c);
+if(c != -1) {
+	return c;
 	}
+} catch(NullPointerException e) {
+	c = -1;
+}
+return c;
+}
+public String check(String s,String b) {
+System.out.println(s+":"+b);
+if(b != null) {
+	return b;
+}else {
+	return "未定義";
+}
+}
+public String check(String s,Date d) {
+	System.out.println(s+":"+d);
+if(d != null) {
+	return d;
+}else {
+	return new Date(-31536000000L);
+}
+}*/
 
-	/**
-	 * 全権取得の為に使用するコンストラクタ
-	 * SQLのResultSetを入れることで全てのデータが入った、
-	 * Customerクラスを簡単に作れます
-	 * @param customer_id
-	 * @param last_name
-	 */
 
-	/*public Customer(ResultSet resultSet) {
-		try {
-		this.last_name = check("last_name",resultSet.getInt("last_name"));
-		this.first_name = check("first_name",resultSet.getString("first_name"));
-		this.last_name_Kana = check("last_name_Kana",resultSet.getString("last_name_Kana"));
-		this.first_name_Kana = check("first_name_Kana",resultSet.getString("first_name_Kana"));
-		this.gender =check("gender",resultSet.getInt("gender"));
-		this.tel_no = check("tel_no",resultSet.getDate("tel_no"));
-		this.email = check("email",resultSet.getInt("email"));
-		this.post_no = check("post_no",resultSet.getString("post_no"));
-		this.address = check("address",resultSet.getString("address"));
-		this.address_detail = check("address_detail",resultSet.getString("address_detail"));
-		this.remarks = check("remarks",resultSet.getString("remarks"));
 		
-		} catch (SQLException e) {
-			System.out.println("SQLデータを正しく格納することが出来ませんでした");
-			e.printStackTrace();
-		}
-	}*/
-
-	/*//null回避用メソッド
-	public String check(String s,int c) {
-		try {
-			System.out.println(s+":"+c);
-		if(c != -1) {
-			return c;
-			}
-		} catch(NullPointerException e) {
-			c = -1;
-		}
-		return c;
-	}
-	public String check(String s,String b) {
-		System.out.println(s+":"+b);
-		if(b != null) {
-			return b;
-		}else {
-			return "未定義";
-		}
-	}
-	public String check(String s,Date d) {
-			System.out.println(s+":"+d);
-		if(d != null) {
-			return d;
-		}else {
-			return new Date(-31536000000L);
-		}
-	}*/
-	
-	/***
-	 * @id customer
-	 * @param 
-	 * customerの中に格納されているデータを確認する為のプログラム（編集用）
-	 */
-	
-	/*public void editTest(String point) {
+		public void editTest(String point) {
 		System.out.println("起動場所:"+point);
 		System.out.println("last_name:"+this.getLast_name());
 		System.out.println("first_name:"+this.getFirst_name());
@@ -150,52 +135,53 @@ public class Customer implements UserDetails {
 		System.out.println("remarks:"+this.getRemarks());
 		System.out.println();
 		System.out.println();
-	}*/
-
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
+		}
+		
+		@Override
+		public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
-	}
-
-	@Override
-	public String getPassword() {
+		}
+		
+		@Override
+		public String getPassword() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
-	}
-
-	@Override
-	public String getUsername() {
+		}
+		
+		@Override
+		public String getUsername() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
-	}
-
-	@Override
-	public boolean isAccountNonExpired() {
+		}
+		
+		@Override
+		public boolean isAccountNonExpired() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
-	}
-
-	@Override
-	public boolean isAccountNonLocked() {
+		}
+		
+		@Override
+		public boolean isAccountNonLocked() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
+		}
+		
+		@Override
+		public boolean isCredentialsNonExpired() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
-	}
-
-	@Override
-	public boolean isEnabled() {
+		}
+		
+		@Override
+		public boolean isEnabled() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
-	}
-
-	public Customer(ResultSet resultSet) {
+		}
+		
+		public Customer(ResultSet resultSet) {
 		// TODO 自動生成されたコンストラクター・スタブ
-	}
-	
-}
+		}
+		
+		}
+		
